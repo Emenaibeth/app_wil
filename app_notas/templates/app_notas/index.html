@@ -14,7 +14,7 @@
         <form method="post" action="{% url 'notas_index' %}" class="nota-form">
             {% csrf_token %}
             <textarea name="nota_contenido" placeholder="Escribe tu nota aquí..." required rows="4"></textarea>
-            <button type="submit">Guardar Nota</button>
+            <button type="submit">Guardar</button>
         </form>
 
         {% if notas %}
