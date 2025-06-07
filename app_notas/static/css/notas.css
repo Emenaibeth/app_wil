@@ -1,0 +1,132 @@
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #f5e8f0; /* Verde muy claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    max-width: 90%;
+    text-align: center;
+}
+
+h1 {
+    color: #762e7d;
+    margin-bottom: 30px;
+    font-size: 2.8em;
+    font-weight: 700;
+}
+
+.nota-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.nota-form textarea {
+    width: calc(100% - 24px); /* Ajuste para padding */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1.1em;
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 80px;
+    outline: none;
+}
+
+.nota-form textarea:focus {
+    border-color: #af4ca2;
+    box-shadow: 0 0 0 0.2rem rgba(76, 175, 80, 0.25);
+}
+
+.nota-form button {
+    padding: 14px 25px;
+    background-color: #af4caa;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nota-form button:hover {
+    background-color: #a04393;
+    transform: translateY(-2px);
+}
+
+.nota-list {
+    list-style: none;
+    padding: 0;
+    max-height: 400px;
+    overflow-y: auto;
+    text-align: left;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.nota-list li {
+    background-color: #fcfcfc;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+}
+
+.nota-list li:hover {
+    transform: translateY(-3px);
+}
+
+.nota-list li p {
+    margin: 0;
+    font-size: 1.15em;
+    color: #424242;
+    line-height: 1.6;
+}
+
+.nota-list li .fecha {
+    font-size: 0.9em;
+    color: #757575;
+    text-align: right;
+    margin-top: 5px;
+}
+
+.delete-form {
+    margin-top: 10px;
+    text-align: right;
+}
+
+.delete-button {
+    background-color: #f44336; /* Rojo para eliminar */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+    background-color: #d32f2f;
+}
+
+.no-notas {
+    color: #777;
+    margin-top: 20px;
+    font-style: italic;
+}

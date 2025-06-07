@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Notas Simples</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/notas.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Mis Notas</h1>
+
+        <form method="post" action="{% url 'notas_index' %}" class="nota-form">
+            {% csrf_token %}
+            <textarea name="nota_contenido" placeholder="Escribe tu nota aquí..." required rows="4"></textarea>
+            <button type="submit">Guardar Nota</button>
+        </form>
+
+        {% if notas %}
+            <ul class="nota-list">
+                {% for nota in notas %}
+                    <li>
+                        <p>{{ nota.contenido }}</p>
+                        <span class="fecha">{{ nota.fecha_creacion|date:"d M Y H:i" }}</span>
+                        <form method="post" action="{% url 'eliminar_nota' nota.id %}" class="delete-form">
+                            {% csrf_token %}
+                            <button type="submit" class="delete-button">Eliminar</button>
+                        </form>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="no-notas">No tienes notas aún. ¡Crea una!</p>
+        {% endif %}
+    </div>
+</body>
+</html>
